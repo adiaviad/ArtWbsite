@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http//www.w3.orgq1999/xhrml" dir=ltr lang="en">
+<head runat="server">
+    <title>aDi AviAd</title>
+    <style type="text/css">
+    body{
+    background-image: url(pictures/backgroundPic1.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+    </style><a href="MasterPage.master">MasterPage.master</a>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" method="post" onsubmit="return CheckForm()" onreset="return Clear()">
+    <div>
+        <% if (Session["Users"] == "guest")
+            {  %> <center>
+            <table border="1">
+                <tr>
+                    <td><h2><a href="Home.aspx">Home Page</a></h2> </td>
+                    <td><h2><a href="Gallery.aspx">Gallery</h2></a></td>
+                    <td><h2><a href="About.aspx">About</h2></a> </td>
+                    <td><a href="LOgin.aspx"><h2>LOgin</h2></a></td>
+                    <td><a href="Regiser.aspx"><h2>Register</a></h2> </td>
+                    <td><a href="Update.aspx"><h2>Update</h2></a></td>
+                    <td><a href="Friends.aspx"><h2>Friends</a></h2> </td>
+                    <td><h2><a href="links.aspx">links</a></h2></td>
+                    <td><a href="mannager.aspx"><h2>mannager</h2></a></td>
+                </tr>
+            </table>
+        </center>
+            <%}
+                else
+                {  %> <center>
+            <table border="1">
+                <tr>
+                    <td><h2><a href="Home.aspx">Home Page</a></h2> </td>
+                    <td><h2><a href="Gallery.aspx">Gallery</h2></a></td>
+                    <td><h2><a href="About.aspx">About</h2></a> </td>
+                    <td><a href="LOgin.aspx"><h2>LOgin</h2></a></td>
+                    <td><a href="Regiser.aspx"><h2>Register</a></h2> </td>
+             
+                    <td><a href="Friends.aspx"><h2>Friends</a></h2> </td>
+                    <td><h2><a href="links.aspx">links</a></h2></td>
+               
+                </tr>
+            </table>
+        </center><%} %>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
